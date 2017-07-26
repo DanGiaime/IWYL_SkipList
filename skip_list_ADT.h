@@ -2,25 +2,18 @@
 #define SKIP_LIST_ADT_H
 #include <stdbool.h>
 
-typedef struct Node_s {
-  struct Node_s *above;
-  struct Node_s *below;
-  struct Node_s *after;
-  struct Node_s *before;
-  void *key;
-  void *value;
-} Node;
-
 #ifndef SKIP_LIST_IMPL
 #define SKIP_LIST_IMPL
 typedef {} *SkipList;
 #endif
 
+SkipList init_list();
+
 void add(SkipList list, void *value);
 
 void clear(SkipList list);
 
-bool contains(Skiplist list, void *value);
+bool contains(SkipList list, void *value);
 
 void* get(SkipList list, void *value);
 
